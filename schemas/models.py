@@ -30,7 +30,7 @@ class Songs(Base):
     Composer = Column(String)
     Milliseconds = Column(Integer, nullable=False)
     Bytes = Column(Integer)
-    UnitPrice = (Numeric)
+    UnitPrice = Column(Numeric)
 
     album = relationship("Albums", back_populates='song')
 

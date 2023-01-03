@@ -37,7 +37,7 @@ class SongDetailResponse(SongBase):
     GenreId: Optional[int]
     Milliseconds: int
     Bytes: Optional[int]
-    #UnitPrice: float  #tengo un error para retornar el precio
+    UnitPrice: float
     
     class Config:
         orm_mode = True
