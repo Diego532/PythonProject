@@ -25,7 +25,7 @@ class AlbumResponse(AlbumBase):
 class SongBase(BaseModel):
     TrackId: int
     Name: str
-    AlbumId: int
+    AlbumId: Optional[int]
 
 class SongResponse(SongBase):
     class Config:
@@ -33,6 +33,8 @@ class SongResponse(SongBase):
 
 class SongDetailResponse(SongBase):
     Composer: Optional[str]
+    MediaTypeId: int
+    GenreId: Optional[int]
     Milliseconds: int
     Bytes: Optional[int]
     #UnitPrice: float  #tengo un error para retornar el precio
