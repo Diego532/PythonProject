@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any, Optional
 from pydantic import BaseModel
 from pydantic.schema import Optional
 
@@ -32,10 +32,11 @@ class SongResponse(SongBase):
         orm_mode = True
 
 class SongDetailResponse(SongBase):
-    Composer: str
+    Composer: Optional[str]
     Milliseconds: int
-    Bytes: int
-    #UnitPrice: Tengo un problema con los datos tipo float 
+    Bytes: Optional[int]
+    #UnitPrice: float  #tengo un error para retornar el precio
     
     class Config:
         orm_mode = True
+
