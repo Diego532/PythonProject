@@ -8,6 +8,6 @@ router = APIRouter()
 
 #Tengu un problema para devolver el precio por la parte dle numeric
 @router.get("/v1/song/{id}/", response_model=SongDetailResponse)
-async def get_song_detail(songId: int,db: Session = Depends(get_db) ):
-    response = song_repo.get_song(db,songId)
+async def get_song_detail(id: int,db: Session = Depends(get_db) ):
+    response = song_repo.get_song(db,id)
     return response
